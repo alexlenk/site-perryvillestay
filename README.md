@@ -16,3 +16,7 @@ Each printed format has its own QR code so Web Analytics can show which one gets
 - Codes: `flyer` (color Letter flyer), `bw` (black-and-white flyer), `half` (half-page flyer), `rack` (rack card), `photo` (4x6 photo card), `card` (all business cards); location flyers `tg`, `mercy`, `gilster`, `air` (airport and West Star), `chamber` (Chamber and Welcome Center).
 - Location flyers: open `print/flyer.html?qr=<code>`; PDFs are `print/flyer-<code>.pdf`. QR images are `print/qr-q-<code>.svg`.
 - Results: Cloudflare dashboard > Web Analytics > perryvillestay.com, filter or group by Path.
+
+## Discounts in print
+
+Print material deliberately shows no percentages ("Weekly discount", "Monthly discount", "Weekly & monthly discounts on Airbnb"), because the 25 % / 30 % discounts are a trial reviewed by the end of March 2027. The exact numbers appear only on the website. The 32-night county tax exemption is printed because it follows the county tax rules, not the trial.
