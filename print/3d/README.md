@@ -1,5 +1,22 @@
 # 3D-printed pin-on card pocket
 
+Two versions of the same pocket:
+- **One piece, printed standing up** (`card-pocket-upright.*`): simplest, no glue. Text in the same color.
+- **Two parts, printed flat** (`card-pocket.*`, details further down): needs gluing, but the text can be a second color with few filament changes.
+
+## One piece, printed standing up
+
+Source: `card-pocket-upright.scad`. Size: 96.7 mm wide, 72 mm high, 14.4 mm deep including the raised text. Card slot 91.9 × 9 mm.
+
+| File | What |
+|---|---|
+| `card-pocket-upright-pocket.stl` | The pocket with raised text, single color (print this one) |
+| `card-pocket-upright-body.stl` + `card-pocket-upright-text.stl` | Same pocket split into body and text, only if you want the text in a second color |
+
+Print as exported: pocket bottom on the bed, back plate and front wall standing. No supports. The base is only 13.8 mm deep and the back plate is 72 mm tall, so use a brim to keep it from tipping or warping. Two-color text on this vertical face means a filament change on every layer the text spans (about 75 layers at 0.2 mm), so single color is the practical choice.
+
+## Two parts, printed flat
+
 A pocket for about 20 US business cards (3.5 × 2 in) that hangs next to a flyer on a bulletin board with two push pins. Source: `card-pocket.scad` (OpenSCAD; all sizes are parameters at the top of the file).
 
 Overall size: 99.9 × 72 mm, 15.8 mm deep with the front plate. The card slot is 91.9 mm wide and 9 mm deep.
