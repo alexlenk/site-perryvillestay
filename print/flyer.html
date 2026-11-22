@@ -9,32 +9,37 @@
   html, body { margin: 0; padding: 0; }
   body { width: 8.5in; height: 11in; font-family: "Helvetica Neue", Arial, sans-serif; color: #1f2328; background: #fafaf7; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .page { width: 8.5in; height: 11in; display: flex; flex-direction: column; overflow: hidden; }
-  .photo { position: relative; height: 4.6in; background: url("../images/house.jpg") center 62% / cover no-repeat; }
+  .photo { position: relative; flex: none; height: 3.45in; background: url("../images/house.jpg") center 62% / cover no-repeat; }
   .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,30,.82), rgba(10,18,30,0) 55%); }
   .photo .title { position: absolute; left: .6in; right: .6in; bottom: .35in; z-index: 1; color: #fff; }
   .eyebrow { font-size: 11pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #e7e2d6; margin: 0 0 6pt; }
   h1 { font-family: Georgia, "Times New Roman", serif; font-size: 34pt; line-height: 1.05; margin: 0 0 8pt; font-weight: 600; }
   .sub { font-size: 15pt; margin: 0; color: #fff; }
-  .body { flex: 1; padding: .35in .6in .3in; display: flex; flex-direction: column; gap: .22in; }
+  .body { flex: 1; padding: .3in .6in .28in; display: flex; flex-direction: column; gap: .17in; }
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
-  .feature { background: #fff; border: 1px solid #ddd9d0; border-radius: 8pt; padding: 10pt 12pt; }
+  .feature { background: #fff; border: 1px solid #ddd9d0; border-radius: 8pt; padding: 8pt 12pt; }
   .feature h3 { font-family: Georgia, serif; font-size: 13pt; margin: 0 0 4pt; color: #1f3a5f; }
   .feature p { font-size: 10.5pt; line-height: 1.35; margin: 0; color: #3d434a; }
   .offers { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
-  .offer { background: #1f3a5f; color: #fff; border-radius: 8pt; padding: 10pt 12pt; }
+  .offer { background: #1f3a5f; color: #fff; border-radius: 8pt; padding: 8pt 12pt; }
   .offer b { display: block; font-family: Georgia, serif; font-size: 24pt; line-height: 1; margin-bottom: 4pt; }
   .offer span { font-size: 10.5pt; line-height: 1.3; }
   .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
   .strip figure { margin: 0; }
-  .strip img { width: 100%; height: 1.25in; object-fit: cover; border-radius: 6pt; display: block; }
+  .strip img { width: 100%; height: .85in; object-fit: cover; border-radius: 6pt; display: block; }
   .strip figcaption { font-size: 8.5pt; color: #6b7178; margin-top: 3pt; }
   .bottom { display: flex; gap: .3in; align-items: center; margin-top: auto; border-top: 1px solid #ddd9d0; padding-top: .22in; }
-  .qr { width: 1.85in; height: 1.85in; flex: none; background: #fff; padding: 4pt; border-radius: 6pt; border: 1px solid #ddd9d0; }
+  .qr { width: 1.7in; height: 1.7in; flex: none; background: #fff; padding: 4pt; border-radius: 6pt; border: 1px solid #ddd9d0; }
   .qr img { width: 100%; height: 100%; display: block; }
   .cta h2 { font-family: Georgia, serif; font-size: 20pt; margin: 0 0 4pt; color: #1f3a5f; }
   .cta .url { font-size: 22pt; font-weight: 700; letter-spacing: .01em; margin: 0 0 6pt; }
   .cta p { font-size: 11pt; margin: 0 0 3pt; color: #3d434a; line-height: 1.35; }
   .small { font-size: 9pt !important; color: #6b7178 !important; }
+  .drive p { font-size: 9pt; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #6b7178; margin: 0 0 4pt; }
+  .drive-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .16in; }
+  .drive-grid div { background: #fff; border: 1px solid #ddd9d0; border-radius: 8pt; padding: 4pt 10pt; }
+  .drive-grid b { display: block; font-family: Georgia, serif; font-size: 13.5pt; color: #1f3a5f; line-height: 1.1; }
+  .drive-grid span { font-size: 9.5pt; color: #3d434a; }
 </style>
 </head>
 <body>
@@ -57,6 +62,7 @@
       <div class="offer"><b>30 % off</b><span>stays of 28 nights or more</span></div>
       <div class="offer"><b>No county tax</b><span>Perry County lodging tax does not apply from 32 nights</span></div>
     </div>
+    <div class="drive"><p>Approx. drive times from the house</p><div class="drive-grid"><div><b>5 min</b><span>TG Missouri</span></div><div><b>4 min</b><span>National Shrine</span></div><div><b>2 min</b><span>Downtown square</span></div><div><b>4 min</b><span>Aldi grocery store</span></div></div></div>
     <div class="strip">
       <figure><img src="../images/kitchen-800.jpg" alt=""><figcaption>Full kitchen</figcaption></figure>
       <figure><img src="../images/bedroom-desk-800.jpg" alt=""><figcaption>Bedroom with desk</figcaption></figure>
