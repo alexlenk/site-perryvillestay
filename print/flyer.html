@@ -64,7 +64,7 @@
       <figure><img src="../images/living-dining-800.jpg" alt=""><figcaption>Living and dining</figcaption></figure>
     </div>
     <div class="bottom">
-      <div class="qr"><img src="qr-flyer.svg" alt="QR code to perryvillestay.com"></div>
+      <div class="qr"><img src="qr-q-flyer.svg" alt="QR code to perryvillestay.com"></div>
       <div class="cta">
         <h2>Photos, dates &amp; booking</h2>
         <p class="url">perryvillestay.com</p>
@@ -75,5 +75,10 @@
     </div>
   </div>
 </div>
+<script>
+  // ?qr=tg|mercy|gilster|air|chamber prints the same flyer with a location-specific QR code (perryvillestay.com/q/<code>).
+  const qr = new URLSearchParams(location.search).get('qr');
+  if (qr && /^[a-z]+$/.test(qr)) document.querySelector('.qr img').src = 'qr-q-' + qr + '.svg';
+</script>
 </body>
 </html>

@@ -6,3 +6,12 @@
 
 /images/*
   Cache-Control: public, max-age=2592000
+
+/q/*
+  Link: <https://perryvillestay.com/>; rel="canonical"
+
+/flyer
+  Link: <https://perryvillestay.com/>; rel="canonical"
+
+/card
+  Link: <https://perryvillestay.com/>; rel="canonical"
