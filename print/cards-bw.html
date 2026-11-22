@@ -27,6 +27,11 @@
   .letter .card { width: 3.5in; height: 2in; padding: .16in .18in; gap: .14in; }
   .letter .qr { width: 1.05in; height: 1.05in; }
   .letter .eyebrow { font-size: 6.5pt; } .letter h1 { font-size: 12pt; } .letter ul { font-size: 7.2pt; } .letter .offer { font-size: 7.4pt; } .letter .url { font-size: 9.5pt; }
+  /* A4 paper with US-size cards (3.5 x 2 in) – for cutting from plain cardstock; centred on the sheet */
+  .a4us .sheet { width: 210mm; height: 297mm; padding: 21.5mm 16.1mm; grid-template-columns: 3.5in 3.5in; grid-template-rows: repeat(5, 2in); }
+  .a4us .card { width: 3.5in; height: 2in; padding: .16in .18in; gap: .14in; }
+  .a4us .qr { width: 1.05in; height: 1.05in; }
+  .a4us .eyebrow { font-size: 6.5pt; } .a4us h1 { font-size: 12pt; } .a4us ul { font-size: 7.2pt; } .a4us .offer { font-size: 7.4pt; } .a4us .url { font-size: 9.5pt; }
   /* A4 / EU */
   .a4 .sheet { width: 210mm; height: 297mm; padding: 11mm 20mm; grid-template-columns: 85mm 85mm; grid-template-rows: repeat(5, 55mm); }
   .a4 .card { width: 85mm; height: 55mm; padding: 4mm 4.5mm; gap: 3.5mm; }
@@ -53,7 +58,8 @@
   </div>
 </template>
 <script>
-  const paper = new URLSearchParams(location.search).get('paper') === 'a4' ? 'a4' : 'letter';
+  const p = new URLSearchParams(location.search).get('paper');
+  const paper = p === 'a4' ? 'a4' : p === 'a4us' ? 'a4us' : 'letter';
   document.body.classList.add(paper);
   const s = document.getElementById('sheet'), t = document.getElementById('tpl');
   for (let i = 0; i < 10; i++) s.appendChild(t.content.cloneNode(true));
