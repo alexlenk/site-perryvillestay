@@ -36,6 +36,8 @@
   .cta p { font-size: 11pt; margin: 0 0 3pt; color: #3d434a; line-height: 1.35; }
   .small { font-size: 9pt !important; color: #6b7178 !important; }
   .cta .drive { font-size: 8.5pt; color: #6b7178; margin: 4pt 0 0; text-wrap: balance; }
+  /* Small code in the corner showing which tracking QR code this print carries (perryvillestay.com/q/<code>). */
+  .qr-tag { position: absolute; right: .14in; bottom: .14in; font: 6.5pt/1 "Helvetica Neue", Arial, sans-serif; color: #a7a39a; letter-spacing: .04em; }
 </style>
 </head>
 <body>
@@ -79,6 +81,16 @@
   // ?qr=tg|mercy|gilster|air|chamber prints the same flyer with a location-specific QR code (perryvillestay.com/q/<code>).
   const qr = new URLSearchParams(location.search).get('qr');
   if (qr && /^[a-z]+$/.test(qr)) document.querySelector('.qr img').src = 'qr-q-' + qr + '.svg';
+</script>
+<script>
+  // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
+  document.querySelectorAll('.qr img').forEach(img => {
+    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z]+)\.svg/);
+    const box = img.closest('.page, .card');
+    if (!m || !box) return;
+    if (getComputedStyle(box).position === 'static') box.style.position = 'relative';
+    const t = document.createElement('span'); t.className = 'qr-tag'; t.textContent = m[1]; box.appendChild(t);
+  });
 </script>
 </body>
 </html>

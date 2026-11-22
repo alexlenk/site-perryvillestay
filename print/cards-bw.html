@@ -37,6 +37,8 @@
   .a4 .card { width: 85mm; height: 55mm; padding: 4mm 4.5mm; gap: 3.5mm; }
   .a4 .qr { width: 27mm; height: 27mm; }
   .a4 .eyebrow { font-size: 6.3pt; } .a4 h1 { font-size: 11.5pt; } .a4 ul { font-size: 7pt; } .a4 .offer { font-size: 7.2pt; } .a4 .url { font-size: 9.2pt; }
+  /* Small code in the corner showing which tracking QR code this print carries (perryvillestay.com/q/<code>). */
+  .qr-tag { position: absolute; right: .05in; bottom: .05in; font: 4.5pt/1 "Helvetica Neue", Arial, sans-serif; color: #999; letter-spacing: .04em; }
 </style>
 </head>
 <body>
@@ -63,6 +65,16 @@
   document.body.classList.add(paper);
   const s = document.getElementById('sheet'), t = document.getElementById('tpl');
   for (let i = 0; i < 10; i++) s.appendChild(t.content.cloneNode(true));
+</script>
+<script>
+  // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
+  document.querySelectorAll('.qr img').forEach(img => {
+    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z]+)\.svg/);
+    const box = img.closest('.page, .card');
+    if (!m || !box) return;
+    if (getComputedStyle(box).position === 'static') box.style.position = 'relative';
+    const t = document.createElement('span'); t.className = 'qr-tag'; t.textContent = m[1]; box.appendChild(t);
+  });
 </script>
 </body>
 </html>
