@@ -13,19 +13,19 @@
   .sheet.up2 { width: 8.5in; height: 11in; padding: 1in .25in; gap: 0; position: relative; }
   .sheet.up2 .card { outline: .5pt dashed #b9b4a8; }
   .card { width: 4in; height: 9in; display: flex; flex-direction: column; overflow: hidden; background: #fafaf7; }
-  .photo { position: relative; flex: none; height: 2.78in; background: url("../images/house.jpg") center 58% / cover no-repeat; }
+  .photo { position: relative; height: 3.3in; background: url("../images/house.jpg") center 58% / cover no-repeat; }
   .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,30,.85), rgba(10,18,30,0) 60%); }
   .photo .title { position: absolute; left: .25in; right: .25in; bottom: .18in; z-index: 1; color: #fff; }
   .eyebrow { font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #e7e2d6; margin: 0 0 3pt; }
   h1 { font-family: Georgia, "Times New Roman", serif; font-size: 19pt; line-height: 1.05; margin: 0 0 4pt; font-weight: 600; }
   .sub { font-size: 9pt; margin: 0; line-height: 1.3; }
-  .body { flex: 1; padding: .16in .25in .18in; display: flex; flex-direction: column; gap: .09in; }
+  .body { flex: 1; padding: .18in .25in .2in; display: flex; flex-direction: column; gap: .13in; }
   .features { margin: 0; padding: 0; list-style: none; display: grid; gap: 4pt; }
   .features li { font-size: 8.6pt; line-height: 1.3; color: #3d434a; padding-left: 11pt; position: relative; }
   .features li::before { content: ""; position: absolute; left: 0; top: 3.5pt; width: 5pt; height: 5pt; border-radius: 50%; background: #1f3a5f; }
   .features b { color: #1f3a5f; }
   .strip { display: grid; grid-template-columns: 1fr 1fr; gap: .08in; }
-  .strip img { width: 100%; height: .8in; object-fit: cover; border-radius: 4pt; display: block; }
+  .strip img { width: 100%; height: .95in; object-fit: cover; border-radius: 4pt; display: block; }
   .offers { display: grid; gap: .06in; }
   .offer { background: #1f3a5f; color: #fff; border-radius: 5pt; padding: 5pt 9pt; display: flex; align-items: baseline; gap: 7pt; }
   .offer b { font-family: Georgia, serif; font-size: 13pt; white-space: nowrap; }
@@ -37,11 +37,7 @@
   .cta h2 { font-family: Georgia, serif; font-size: 11pt; margin: 0 0 2pt; color: #1f3a5f; }
   .cta .url { font-size: 12.5pt; font-weight: 700; margin: 0 0 3pt; }
   .cta p { font-size: 7.4pt; margin: 0; color: #3d434a; line-height: 1.3; }
-  .drive p { font-size: 6.8pt; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #6b7178; margin: 0 0 3pt; }
-  .drive-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .06in; }
-  .drive-grid div { background: #fff; border: 1px solid #ddd9d0; border-radius: 5pt; padding: 3pt 7pt; display: flex; align-items: baseline; gap: 5pt; }
-  .drive-grid b { font-family: Georgia, serif; font-size: 10.5pt; color: #1f3a5f; white-space: nowrap; }
-  .drive-grid span { font-size: 7.4pt; color: #3d434a; }
+  .cta .drive { font-size: 6.5pt; color: #6b7178; margin: 3pt 0 0; line-height: 1.3; text-wrap: balance; }
 </style>
 </head>
 <body>
@@ -70,7 +66,6 @@
         <div class="offer"><b>30 % off</b><span>stays of 28+ nights</span></div>
         <div class="offer"><b>No county tax</b><span>from 32 nights</span></div>
       </div>
-      <div class="drive"><p>Approx. drive times from the house</p><div class="drive-grid"><div><b>5 min</b><span>TG Missouri</span></div><div><b>4 min</b><span>National Shrine</span></div><div><b>2 min</b><span>Downtown square</span></div><div><b>4 min</b><span>Aldi grocery store</span></div></div></div>
       <p class="near">Close to the National Shrine of Our Lady of the Miraculous Medal, Missouri's National Veterans Memorial and the Saxon Lutheran heritage sites in Altenburg and Frohna.</p>
       <div class="bottom">
         <div class="qr"><img src="qr-flyer.svg" alt="QR code to perryvillestay.com"></div>
@@ -78,7 +73,8 @@
           <h2>Photos &amp; booking</h2>
           <p class="url">perryvillestay.com</p>
           <p>Book and message us on Airbnb. Guest Favorite on Airbnb.</p>
-        </div>
+          <p class="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
+</div>
       </div>
     </div>
   </div>
