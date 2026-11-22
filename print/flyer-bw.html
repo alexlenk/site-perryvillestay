@@ -5,14 +5,13 @@
 <title>Flyer (black and white) – German-Inspired Home in Perryville</title>
 <style>
   /* Black-and-white flyer for laser printers: white background, outlined boxes instead of dark fills, grayscale photos.
-     ?paper=letter (default) or ?paper=a4. Print at 100 % / actual size. */
+     US Letter. Print at 100 % / actual size. */
   @page { margin: 0; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: #fff; }
   body { font-family: "Helvetica Neue", Arial, sans-serif; color: #000; }
   .page { display: flex; flex-direction: column; overflow: hidden; padding: .45in .6in .4in; gap: .2in; }
   .letter .page { width: 8.5in; height: 11in; }
-  .a4 .page { width: 210mm; height: 297mm; padding: 12mm 16mm 11mm; }
   .photo { flex: none; height: 2.7in; background: url("../images/house.jpg") center 40% / cover no-repeat; filter: grayscale(1) contrast(1.05); border: 1pt solid #000; }
   .eyebrow { font-size: 10pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin: 0 0 4pt; color: #333; }
   h1 { font-family: Georgia, "Times New Roman", serif; font-size: 32pt; line-height: 1.05; margin: 0 0 5pt; font-weight: 700; }
@@ -76,8 +75,7 @@
   </div>
 </div>
 <script>
-  const p = new URLSearchParams(location.search).get('paper');
-  document.body.classList.add(p === 'a4' ? 'a4' : 'letter');
+  document.body.classList.add('letter');
 </script>
 <script>
   // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
