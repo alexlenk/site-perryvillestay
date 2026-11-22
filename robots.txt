@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://perryvillestay.com/sitemap.xml
