@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rack card – German-Inspired Home in Perryville</title>
+<style>
+  /* One rack card = 4 x 9 in (brochure-rack size). ?up=2 places two side by side on a portrait US Letter sheet with cut marks. */
+  @page { margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1f2328; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { display: flex; }
+  .sheet.up2 { width: 8.5in; height: 11in; padding: 1in .25in; gap: 0; position: relative; }
+  .sheet.up2 .card { outline: .5pt dashed #b9b4a8; }
+  .card { width: 4in; height: 9in; display: flex; flex-direction: column; overflow: hidden; background: #fafaf7; }
+  .photo { position: relative; height: 3.3in; background: url("../images/house.jpg") center 58% / cover no-repeat; }
+  .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,30,.85), rgba(10,18,30,0) 60%); }
+  .photo .title { position: absolute; left: .25in; right: .25in; bottom: .18in; z-index: 1; color: #fff; }
+  .eyebrow { font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #e7e2d6; margin: 0 0 3pt; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 19pt; line-height: 1.05; margin: 0 0 4pt; font-weight: 600; }
+  .sub { font-size: 9pt; margin: 0; line-height: 1.3; }
+  .body { flex: 1; padding: .18in .25in .2in; display: flex; flex-direction: column; gap: .13in; }
+  .features { margin: 0; padding: 0; list-style: none; display: grid; gap: 4pt; }
+  .features li { font-size: 8.6pt; line-height: 1.3; color: #3d434a; padding-left: 11pt; position: relative; }
+  .features li::before { content: ""; position: absolute; left: 0; top: 3.5pt; width: 5pt; height: 5pt; border-radius: 50%; background: #1f3a5f; }
+  .features b { color: #1f3a5f; }
+  .strip { display: grid; grid-template-columns: 1fr 1fr; gap: .08in; }
+  .strip img { width: 100%; height: .95in; object-fit: cover; border-radius: 4pt; display: block; }
+  .offers { display: grid; gap: .06in; }
+  .offer { background: #1f3a5f; color: #fff; border-radius: 5pt; padding: 5pt 9pt; display: flex; align-items: baseline; gap: 7pt; }
+  .offer b { font-family: Georgia, serif; font-size: 13pt; white-space: nowrap; }
+  .offer span { font-size: 8pt; }
+  .near { font-size: 8.2pt; line-height: 1.35; color: #3d434a; margin: 2pt 0 0; padding: 7pt 9pt; border-left: 3pt solid #1f3a5f; background: #fff; }
+  .bottom { margin-top: auto; display: flex; gap: .14in; align-items: center; border-top: 1px solid #ddd9d0; padding-top: .14in; }
+  .qr { width: 1.25in; height: 1.25in; flex: none; background: #fff; padding: 3pt; border-radius: 4pt; border: 1px solid #ddd9d0; }
+  .qr img { width: 100%; height: 100%; display: block; }
+  .cta h2 { font-family: Georgia, serif; font-size: 11pt; margin: 0 0 2pt; color: #1f3a5f; }
+  .cta .url { font-size: 12.5pt; font-weight: 700; margin: 0 0 3pt; }
+  .cta p { font-size: 7.4pt; margin: 0; color: #3d434a; line-height: 1.3; }
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet"></div>
+<template id="tpl">
+  <div class="card">
+    <div class="photo">
+      <div class="title">
+        <p class="eyebrow">Perryville, Missouri</p>
+        <h1>German-Inspired Home in Perryville</h1>
+        <p class="sub">Your own private house for work stays and visits.</p>
+      </div>
+    </div>
+    <div class="body">
+      <ul class="features">
+        <li><b>Whole house to yourself</b> – nothing shared, quiet street</li>
+        <li><b>Desk &amp; fast Wi-Fi</b>, full kitchen, washer and dryer</li>
+        <li><b>Self check-in</b> from 4 pm</li>
+      </ul>
+      <div class="strip">
+        <img src="../images/kitchen-800.jpg" alt="">
+        <img src="../images/bedroom-desk-800.jpg" alt="">
+      </div>
+      <div class="offers">
+        <div class="offer"><b>25 % off</b><span>stays of 7+ nights</span></div>
+        <div class="offer"><b>30 % off</b><span>stays of 28+ nights</span></div>
+        <div class="offer"><b>No county tax</b><span>from 32 nights</span></div>
+      </div>
+      <p class="near">Close to the National Shrine of Our Lady of the Miraculous Medal, Missouri's National Veterans Memorial and the Saxon Lutheran heritage sites in Altenburg and Frohna.</p>
+      <div class="bottom">
+        <div class="qr"><img src="qr-flyer.svg" alt="QR code to perryvillestay.com"></div>
+        <div class="cta">
+          <h2>Photos &amp; booking</h2>
+          <p class="url">perryvillestay.com</p>
+          <p>Book and message us on Airbnb. Guest Favorite on Airbnb.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  const up = new URLSearchParams(location.search).get('up') === '2' ? 2 : 1;
+  const s = document.getElementById('sheet'), t = document.getElementById('tpl');
+  if (up === 2) s.classList.add('up2');
+  for (let i = 0; i < up; i++) s.appendChild(t.content.cloneNode(true));
+</script>
+</body>
+</html>
