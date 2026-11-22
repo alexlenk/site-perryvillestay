@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Business cards – German-Inspired Home in Perryville</title>
+<style>
+  /* 4 x 6 in photo print with three 3.5 x 2 in cards (cut along the thin lines). Derived from cards.html.
+     10 cards of 3.5 x 2 in on US Letter: 0.75 in side margins, 0.5 in top margin, no gutters (common perforated card-sheet layout – compare with your card stock's template before printing). */
+  @page { size: 8.5in 11in; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { width: 4in; height: 6in; background: #fff; font-family: "Helvetica Neue", Arial, sans-serif; color: #1f2328; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { position: relative; width: 4in; height: 6in; padding: 0 .25in; display: grid; grid-template-columns: 3.5in; grid-template-rows: repeat(3, 2in); }
+  .card { width: 3.5in; height: 2in; padding: .16in .18in; display: flex; gap: .14in; align-items: center; background: #fafaf7; outline: .5pt dashed #c9c4b8; }
+  .text { flex: 1; min-width: 0; }
+  .eyebrow { font-size: 6.5pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #6b7178; margin: 0 0 2pt; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 12pt; line-height: 1.1; margin: 0 0 4pt; color: #1f3a5f; }
+  ul { margin: 0 0 4pt; padding-left: 9pt; font-size: 7.2pt; line-height: 1.35; color: #3d434a; }
+  .offer { font-size: 7.4pt; font-weight: 700; color: #1f3a5f; margin: 0 0 3pt; }
+  .url { font-size: 9.5pt; font-weight: 700; margin: 0; }
+  .qr { width: 1.05in; height: 1.05in; flex: none; background: #fff; }
+  .qr img { width: 100%; height: 100%; display: block; }
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet"></div>
+<template id="tpl">
+  <div class="card">
+    <div class="text">
+      <p class="eyebrow">Perryville, Missouri</p>
+      <h1>German-Inspired Home in Perryville</h1>
+      <ul>
+        <li>Your own private house for work stays</li>
+        <li>Desk, fast Wi-Fi, kitchen, washer &amp; dryer</li>
+        <li>Self check-in from 4 pm</li>
+      </ul>
+      <p class="offer">25 % off weekly · 30 % off monthly</p>
+      <p class="url">perryvillestay.com</p>
+    </div>
+    <div class="qr"><img src="qr-card.svg" alt="QR code to perryvillestay.com"></div>
+  </div>
+</template>
+<script>
+  const s = document.getElementById('sheet'), t = document.getElementById('tpl');
+  for (let i = 0; i < 3; i++) s.appendChild(t.content.cloneNode(true));
+</script>
+</body>
+</html>
