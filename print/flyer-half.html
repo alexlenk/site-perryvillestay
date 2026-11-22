@@ -90,7 +90,7 @@
 <script>
   // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
   document.querySelectorAll('.qr img').forEach(img => {
-    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z]+)\.svg/);
+    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z-]+)\.svg/);
     const box = img.closest('.page, .card');
     if (!m || !box) return;
     if (getComputedStyle(box).position === 'static') box.style.position = 'relative';

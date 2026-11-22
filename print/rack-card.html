@@ -75,7 +75,7 @@
           <h2>Photos &amp; booking</h2>
           <p class="url">perryvillestay.com</p>
           <p>Book and message us on Airbnb. Guest Favorite on Airbnb.</p>
-          <p class="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
+          <p class="drive" data-drive>Approx. drive times: TG&nbsp;Missouri&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
 </div>
       </div>
     </div>
@@ -88,9 +88,18 @@
   for (let i = 0; i < up; i++) s.appendChild(t.content.cloneNode(true));
 </script>
 <script>
+  // ?qr=shrine prints the rack card with the Shrine's own QR code (perryvillestay.com/q/rack-shrine) and the Shrine first in the drive times.
+  const rackLoc = new URLSearchParams(location.search).get('qr');
+  const rackDrive = { shrine: ['National Shrine 4 min', 'TG Missouri 5 min', 'downtown square 2 min', 'Aldi 4 min'] }[rackLoc];
+  if (rackDrive) {
+    document.querySelectorAll('.qr img').forEach(img => img.src = 'qr-q-rack-' + rackLoc + '.svg');
+    document.querySelectorAll('[data-drive]').forEach(p => p.textContent = 'Approx. drive times: ' + rackDrive.map(x => x.replace(/ /g, '\u00a0')).join(' \u00b7 '));
+  }
+</script>
+<script>
   // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
   document.querySelectorAll('.qr img').forEach(img => {
-    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z]+)\.svg/);
+    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z-]+)\.svg/);
     const box = img.closest('.page, .card');
     if (!m || !box) return;
     if (getComputedStyle(box).position === 'static') box.style.position = 'relative';

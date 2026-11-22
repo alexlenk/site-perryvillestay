@@ -47,9 +47,14 @@
   for (let i = 0; i < 3; i++) s.appendChild(t.content.cloneNode(true));
 </script>
 <script>
+  // ?qr=tg|mercy|gilster|air|chamber|shrine prints the cards with a location-specific QR code (perryvillestay.com/q/card-<code>).
+  const qrLoc = new URLSearchParams(location.search).get('qr');
+  if (qrLoc && /^[a-z]+$/.test(qrLoc)) document.querySelectorAll('.qr img').forEach(img => img.src = 'qr-q-card-' + qrLoc + '.svg');
+</script>
+<script>
   // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
   document.querySelectorAll('.qr img').forEach(img => {
-    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z]+)\.svg/);
+    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z-]+)\.svg/);
     const box = img.closest('.page, .card');
     if (!m || !box) return;
     if (getComputedStyle(box).position === 'static') box.style.position = 'relative';

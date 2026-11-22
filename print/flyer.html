@@ -72,20 +72,31 @@
         <p class="url">perryvillestay.com</p>
         <p>Scan the code or visit the website. Booking and messages through Airbnb – discounts apply automatically, receipts for your company in your Airbnb account.</p>
         <p class="small">Guest Favorite on Airbnb · Clean, minimalist European style · Restored in 2022</p>
-        <p class="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
+        <p class="drive" id="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
 </div>
     </div>
   </div>
 </div>
 <script>
-  // ?qr=tg|mercy|gilster|air|chamber prints the same flyer with a location-specific QR code (perryvillestay.com/q/<code>).
+  // ?qr=tg|mercy|gilster|air|chamber|shrine prints the same flyer with a location-specific QR code (perryvillestay.com/q/<code>).
   const qr = new URLSearchParams(location.search).get('qr');
   if (qr && /^[a-z]+$/.test(qr)) document.querySelector('.qr img').src = 'qr-q-' + qr + '.svg';
 </script>
 <script>
+  // Location flyers name their own destination first in the drive-times footnote (times from OpenStreetMap routing, rounded up).
+  const drive = {
+    mercy:   ['Mercy Hospital 3 min', 'National Shrine 4 min', 'downtown square 2 min', 'Aldi 4 min'],
+    gilster: ['Gilster-Mary Lee 3 min', 'TG Missouri 5 min', 'downtown square 2 min', 'Aldi 4 min'],
+    air:     ['Perryville Regional Airport about 20 min', 'downtown square 2 min', 'Aldi 4 min'],
+    chamber: ['Chamber of Commerce 3 min', 'TG Missouri 5 min', 'National Shrine 4 min', 'Aldi 4 min'],
+    shrine:  ['National Shrine 4 min', 'TG Missouri 5 min', 'downtown square 2 min', 'Aldi 4 min'],
+  }[new URLSearchParams(location.search).get('qr')];
+  if (drive) document.getElementById('drive').textContent = 'Approx. drive times: ' + drive.map(x => x.replace(/ /g, '\u00a0')).join(' \u00b7 ');
+</script>
+<script>
   // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
   document.querySelectorAll('.qr img').forEach(img => {
-    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z]+)\.svg/);
+    const m = (img.getAttribute('src') || '').match(/qr-q-([a-z-]+)\.svg/);
     const box = img.closest('.page, .card');
     if (!m || !box) return;
     if (getComputedStyle(box).position === 'static') box.style.position = 'relative';
