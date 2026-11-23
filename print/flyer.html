@@ -18,7 +18,7 @@
   .body { flex: 1; padding: .22in .6in .3in; display: flex; flex-direction: column; gap: .15in; }
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
   .feature { background: #fff; border: 1px solid #ddd9d0; border-radius: 8pt; padding: 7pt 12pt; }
-  .feature h3 { font-family: "Gelasio", Georgia, serif; font-size: 11.3pt; margin: 0 0 4pt; color: #1f3a5f; }
+  .feature h3 { font-family: "Gelasio", Georgia, serif; font-size: 11pt; margin: 0 0 4pt; color: #1f3a5f; }
   .feature p { font-size: 10.5pt; line-height: 1.35; margin: 0; color: #3d434a; }
   .offers { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
   .offer { background: #1f3a5f; color: #fff; border-radius: 8pt; padding: 10pt 12pt; }
@@ -34,8 +34,8 @@
   .cta h2 { font-family: "Gelasio", Georgia, serif; font-size: 16pt; margin: 0 0 4pt; color: #1f3a5f; }
   .cta .url { font-size: 22pt; font-weight: 700; letter-spacing: .01em; margin: 0 0 6pt; }
   .cta p { font-size: 11pt; margin: 0 0 3pt; color: #3d434a; line-height: 1.35; }
-  .small { font-size: 9pt !important; color: #6b7178 !important; }
-  .cta .drive { font-size: 9.5pt; color: #6b7178; margin: 4pt 0 0; text-wrap: balance; }
+  .small { font-size: 9pt !important; color: #4a5058 !important; }
+  .cta .drive { font-size: 9.5pt; color: #4a5058; margin: 4pt 0 0; text-wrap: balance; }
   /* Small code in the corner showing which tracking QR code this print carries (perryvillestay.com/q/<code>). */
   .qr-tag { position: absolute; right: .34in; bottom: .32in; writing-mode: vertical-rl; transform: rotate(180deg); font: 5.0pt/1 "Helvetica Neue", Arial, sans-serif; color: #a7a39a; letter-spacing: .04em; }
   .photo .qr-tag { top: auto; left: auto; right: .32in; bottom: .14in; writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(255,255,255,.8); text-shadow: 0 0 1.5px rgba(0,0,0,.6); z-index: 2; }
@@ -60,14 +60,14 @@
   <div class="titlebar">
     <div class="title">
       <h1>In town for work?<br>Your own house, not a room.</h1>
-      <p class="sub">Whole furnished house in Perryville</p>
-        <p class="facts">1 bedroom · 1 queen bed · free driveway parking</p>
+      <p class="sub">Whole furnished house in Perryville, MO</p>
+        <p class="facts">1 bedroom · 1 queen bed · up to 2 guests · free driveway parking</p>
     </div>
   </div>
   <div class="body">
     <div class="features">
-      <div class="feature"><h3>Work from the house</h3><p>Dedicated desk with an ergonomic chair and fast <span class="nw">Wi-Fi</span>.</p></div>
-      <div class="feature"><h3>Live like at home</h3><p>Full kitchen with dishwasher, your own washer&nbsp;and&nbsp;dryer, quiet street.</p></div>
+      <div class="feature"><h3>Set up for work</h3><p>Dedicated desk with an ergonomic chair and fast <span class="nw">Wi-Fi</span>.</p></div>
+      <div class="feature"><h3>All the comforts of home</h3><p>Full kitchen with dishwasher, your own washer&nbsp;and&nbsp;dryer, quiet street.</p></div>
       <div class="feature"><h3>Arrive on your schedule</h3><p>Self check-in with a smart lock any time after 4 pm, even midnight. Nothing shared with other guests.</p></div>
     </div>
     <p class="band">Cheaper than a hotel room · Weekly &amp; monthly discounts</p>
@@ -81,10 +81,10 @@
       <div class="cta">
         <h2>Scan for current rates — then book on Airbnb</h2>
         <p class="url">perryvillestay.com</p>
-        <p class="rating"><span class="nw">★ 4.9+ from 39+ reviews</span> · <span class="nw">Guest Favorite on Airbnb</span></p>
-        <p>Messages through Airbnb, too. Discounts apply automatically; itemized receipts for your expense report.</p>
+        <p class="rating"><span class="nw">★ 4.9+ from 39+ reviews</span>&nbsp;· <span class="nw">Guest Favorite on Airbnb</span></p>
+        <p>Questions? Message us on Airbnb. Discounts apply automatically; itemized receipts for your expense report.</p>
         <p class="small">Modern, clean European-style interior · Renovated in 2022</p>
-        <p class="drive" id="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;plant&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
+        <p class="drive" id="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;plant&nbsp;5&nbsp;min&nbsp;· National&nbsp;Shrine&nbsp;4&nbsp;min&nbsp;· downtown&nbsp;square&nbsp;2&nbsp;min&nbsp;· Aldi&nbsp;4&nbsp;min</p>
 </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
     chamber: ['Chamber of Commerce 3 min', 'TG Missouri plant 5 min', 'National Shrine 4 min', 'Aldi 4 min'],
     shrine:  ['National Shrine 4 min', 'TG Missouri plant 5 min', 'downtown square 2 min', 'Aldi 4 min'],
   }[new URLSearchParams(location.search).get('qr')];
-  if (drive) document.getElementById('drive').textContent = 'Approx. drive times: ' + drive.map(x => x.replace(/ /g, '\u00a0')).join(' \u00b7 ');
+  if (drive) document.getElementById('drive').textContent = 'Approx. drive times: ' + drive.map(x => x.replace(/ /g, '\u00a0')).join('\u00a0\u00b7 ');
 </script>
 <script>
   // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
