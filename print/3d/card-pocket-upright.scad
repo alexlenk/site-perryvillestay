@@ -24,8 +24,8 @@ pin_inset  = 10;     // pin hole distance from the side edges
 notch_r    = 11;     // thumb notch radius in the front wall
 text_h     = 0.6;    // raised text height
 font_b     = "Liberation Sans:style=Bold";
-line1      = "Work stays in Perryville";
-line2      = "perryvillestay.com";
+label      = "perryvillestay.com";
+label_size = 7.2;  // largest size that leaves a few mm on each side
 
 inner_w = card_w + 2 * clearance;
 outer_w = inner_w + 2 * wall;
@@ -49,8 +49,7 @@ module text_part() {
   // on the front face, read from the front
   translate([outer_w/2, depth, 0]) rotate([90, 0, 180])
     linear_extrude(text_h) {
-      translate([0, 12.6]) text(line1, size = 4.6, font = font_b, halign = "center");
-      translate([0, 4.2])  text(line2, size = 6.4, font = font_b, halign = "center");
+      translate([0, 7]) text(label, size = label_size, font = font_b, halign = "center");
     }
 }
 

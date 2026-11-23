@@ -30,8 +30,8 @@ hole_d     = 2.8;    // matching blind holes in the front plate
 hole_depth = 1.7;
 text_h     = 0.6;    // raised text height
 font_b     = "Liberation Sans:style=Bold";
-line1      = "Work stays in Perryville";
-line2      = "perryvillestay.com";
+label      = "perryvillestay.com";
+label_size = 7.5;  // largest size that leaves a few mm on each side
 
 inner_w = card_w + 2 * clearance;
 outer_w = inner_w + 2 * wall;
@@ -64,8 +64,7 @@ module front_plate() {
 
 module front_text() {
   translate([outer_w/2, 0, front_t]) linear_extrude(text_h) {
-    translate([0, 13.2]) text(line1, size = 4.6, font = font_b, halign = "center");
-    translate([0, 4.6])  text(line2, size = 6.4, font = font_b, halign = "center");
+    translate([0, 8]) text(label, size = label_size, font = font_b, halign = "center");
   }
 }
 
