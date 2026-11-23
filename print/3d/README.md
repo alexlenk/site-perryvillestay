@@ -6,14 +6,16 @@ Two versions of the same pocket:
 
 ## One piece, printed standing up
 
-Source: `card-pocket-upright.scad`. Size: 96.7 mm wide, 72 mm high, 14.4 mm deep including the raised text. Card slot 91.9 × 9 mm.
+Source: `card-pocket-upright.scad`. Size: 94.3 mm wide, 52 mm high (card height plus the floor), 12 mm deep including the raised text. Walls, back and floor 1.2 mm (about 3 lines with a 0.4 mm nozzle). Card slot 91.9 × 9 mm. The pin holes are near the top corners, behind the cards: pin the pocket up first, then put the cards in.
+
+*2026-11-23:* slimmed down after a test print of the first version (2.4 mm walls, 72 mm high), which felt clunky; the new one uses about 40 % of the plastic.
 
 | File | What |
 |---|---|
 | `card-pocket-upright-pocket.stl` | The pocket with raised text, single color (print this one) |
 | `card-pocket-upright-body.stl` + `card-pocket-upright-text.stl` | Same pocket split into body and text, only if you want the text in a second color |
 
-Print as exported: pocket bottom on the bed, back plate and front wall standing. No supports. The base is only 13.8 mm deep and the back plate is 72 mm tall, so use a brim to keep it from tipping or warping. Two-color text on this vertical face means a filament change on every layer the text spans (about 75 layers at 0.2 mm), so single color is the practical choice.
+Print as exported: pocket bottom on the bed, back plate and front wall standing. No supports. The base is only 11.4 mm deep, so use a brim to keep it from tipping or warping. Two-color text on this vertical face means a filament change on every layer the text spans (about 75 layers at 0.2 mm), so single color is the practical choice.
 
 ## Two parts, printed flat
 
