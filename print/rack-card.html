@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <title>Rack card – German-Inspired Home in Perryville</title>
 <style>
-  /* One rack card = 4 x 9 in (brochure-rack size). ?up=2 places two side by side on a portrait US Letter sheet with cut marks. */
+  /* Work rack card (Chamber rack and business counters); the visitor version is rack-card-visit.html.
+     One rack card = 4 x 9 in (brochure-rack size). ?up=2 places two side by side on a portrait US Letter sheet with cut marks. */
   @page { margin: 0; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -46,6 +47,7 @@
   .titlebar .sub { color: #fff; }
   .titlebar .title { position: static; }
   .photo::after { display: none; }
+  .facts { font-size: 7.6pt; margin: 2pt 0 0; color: #e7e2d6; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -59,6 +61,7 @@
         <p class="eyebrow">★ Guest Favorite on Airbnb · German-Inspired Home</p>
         <h1>In town for work?<br>Your own house, not a room.</h1>
         <p class="sub">Whole furnished house in Perryville · weekly &amp; monthly stays</p>
+        <p class="facts">1 bedroom · 1 queen bed · free driveway parking</p>
       </div>
     </div>
     <div class="body">
@@ -72,7 +75,6 @@
         <img src="../images/bedroom-desk-800.jpg" alt="">
       </div>
       <p class="band">Weekly &amp; monthly discounts · No county lodging tax on stays of 32+ nights</p>
-      <p class="near">Close to the National Shrine of Our Lady of the Miraculous Medal, Missouri's National Veterans Memorial and the Saxon Lutheran heritage sites in Altenburg and Frohna.</p>
       <div class="bottom">
         <div class="qr"><img src="qr-q-rack.svg" alt="QR code to perryvillestay.com"></div>
         <div class="cta">
@@ -90,15 +92,6 @@
   const s = document.getElementById('sheet'), t = document.getElementById('tpl');
   if (up === 2) s.classList.add('up2');
   for (let i = 0; i < up; i++) s.appendChild(t.content.cloneNode(true));
-</script>
-<script>
-  // ?qr=shrine prints the rack card with the Shrine's own QR code (perryvillestay.com/q/rack-shrine) and the Shrine first in the drive times.
-  const rackLoc = new URLSearchParams(location.search).get('qr');
-  const rackDrive = { shrine: ['National Shrine 4 min', 'TG Missouri 5 min', 'downtown square 2 min', 'Aldi 4 min'] }[rackLoc];
-  if (rackDrive) {
-    document.querySelectorAll('.qr img').forEach(img => img.src = 'qr-q-rack-' + rackLoc + '.svg');
-    document.querySelectorAll('[data-drive]').forEach(p => p.textContent = 'Approx. drive times: ' + rackDrive.map(x => x.replace(/ /g, '\u00a0')).join(' \u00b7 '));
-  }
 </script>
 <script>
   // Label each page/card with its QR code name, read from the QR image file (qr-q-<code>.svg).
