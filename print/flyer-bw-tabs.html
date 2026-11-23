@@ -12,27 +12,27 @@
   html, body { margin: 0; padding: 0; background: #fff; }
   body { font-family: "Helvetica Neue", Arial, sans-serif; color: #000; }
   .page { position: relative; width: 8.5in; height: 11in; display: flex; flex-direction: column; overflow: hidden; padding: .4in .6in 0; gap: .16in; }
-  .photo { flex: none; height: 1.47in; background: url("../images/house.jpg") center 40% / cover no-repeat; filter: grayscale(1) contrast(1.05); border: 1pt solid #000; }
+  .photo { flex: none; height: 1.44in; background: url("../images/house.jpg") center 40% / cover no-repeat; filter: grayscale(1) brightness(1.08) contrast(1.12); border: 1pt solid #000; }
   .eyebrow { font-size: 10pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin: 0 0 3pt; color: #333; }
-  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 42pt; line-height: 1.05; margin: 0 0 4pt; font-weight: 700; }
+  h1 { font-family: "Gelasio", Georgia, serif; font-size: 35pt; line-height: 1.05; margin: 0 0 4pt; font-weight: 700; }
   .sub { font-size: 16pt; margin: 0; }
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: .15in; }
   .feature { border: 1pt solid #000; border-radius: 6pt; padding: 8pt 11pt; }
-  .feature h3 { font-family: Georgia, serif; font-size: 12pt; margin: 0 0 3pt; }
+  .feature h3 { font-family: "Gelasio", Georgia, serif; font-size: 11.5pt; margin: 0 0 3pt; }
   .feature p { font-size: 9.5pt; line-height: 1.3; margin: 0; }
   .offers { display: grid; grid-template-columns: repeat(3, 1fr); gap: .15in; }
   .offer { border: 2pt solid #000; border-radius: 6pt; padding: 7pt 11pt; }
-  .offer b { display: block; font-family: Georgia, serif; font-size: 17pt; line-height: 1.05; margin-bottom: 3pt; }
+  .offer b { display: block; font-family: "Gelasio", Georgia, serif; font-size: 17pt; line-height: 1.05; margin-bottom: 3pt; }
   .offer span { font-size: 9.5pt; line-height: 1.3; }
   .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: .15in; }
-  .strip img { width: 100%; height: .72in; object-fit: cover; display: block; filter: grayscale(1); border: .75pt solid #000; }
+  .strip img { width: 100%; height: .72in; object-fit: cover; display: block; filter: grayscale(1) brightness(1.18) contrast(1.12); border: .75pt solid #000; }
   .bottom { display: flex; gap: .25in; align-items: center; border-top: 1pt solid #000; padding-top: .14in; }
   .qr { width: 1.45in; height: 1.45in; flex: none; }
   .qr img, .tab-qr img { width: 100%; height: 100%; display: block; }
-  .cta h2 { font-family: Georgia, serif; font-size: 16pt; margin: 0 0 2pt; }
+  .cta h2 { font-family: "Gelasio", Georgia, serif; font-size: 16pt; margin: 0 0 2pt; }
   .cta .url { font-size: 19pt; font-weight: 700; margin: 0 0 4pt; }
   .cta p { font-size: 10pt; margin: 0 0 3pt; line-height: 1.3; }
-  .cta .drive { font-size: 8.5pt; color: #333; margin: 3pt 0 0; text-wrap: balance; }
+  .cta .drive { font-size: 9pt; color: #333; margin: 3pt 0 0; text-wrap: balance; }
   /* Tear-off tabs */
   .tabs { margin: auto -.3in .3in; height: 2.15in; border-top: 1pt dashed #000; display: grid; grid-template-columns: repeat(9, 1fr); }
   .tab { border-left: .75pt dashed #000; padding: .08in .06in .1in; display: flex; flex-direction: column; align-items: center; gap: .06in; }
@@ -42,27 +42,32 @@
   .tab-text b { font-size: 7pt; font-weight: 700; white-space: nowrap; }
   .tab-text span { font-size: 9pt; font-weight: 700; white-space: nowrap; }
   /* Small code in the corner showing which tracking QR code this print carries (perryvillestay.com/q/<code>). */
-  .qr-tag { position: absolute; right: .3in; top: .3in; font: 6.5pt/1 "Helvetica Neue", Arial, sans-serif; color: #888; letter-spacing: .04em; }
+  .qr-tag { position: absolute; right: .3in; top: .3in; font: 5.0pt/1 "Helvetica Neue", Arial, sans-serif; color: #888; letter-spacing: .04em; }
   .photo .qr-tag { top: auto; left: auto; right: .07in; bottom: .07in; writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(255,255,255,.8); text-shadow: 0 0 1.5px rgba(0,0,0,.6); z-index: 2; }
   .band { margin: 0; border: 2pt solid #000; border-radius: 6pt; padding: 6pt 12pt; font-size: 12pt; font-weight: 700; text-align: center; }
   .facts { font-size: 11.5pt; margin: 3pt 0 0; font-weight: 700; }
+  /* Gelasio (SIL Open Font License, fonts/Gelasio-OFL-LICENSE.txt), metrically close to Georgia, embedded so every PDF uses the same serif. */
+  @font-face { font-family: "Gelasio"; src: url("fonts/gelasio-latin-600-normal.woff2") format("woff2"); font-weight: 400 600; }
+  @font-face { font-family: "Gelasio"; src: url("fonts/gelasio-latin-700-normal.woff2") format("woff2"); font-weight: 700 900; }
+  p, li, h1, h2, h3 { text-wrap: pretty; }
+  .nw { white-space: nowrap; }
 </style>
 </head>
 <body>
 <div class="page">
   <div class="photo"></div>
   <div>
-    <p class="eyebrow">★ Guest Favorite on Airbnb · German-Inspired Home</p>
+    <p class="eyebrow">★ Guest Favorite on Airbnb</p>
     <h1>In town for work?<br>Your own house, not a room.</h1>
     <p class="sub">Whole furnished house in Perryville · weekly &amp; monthly stays</p>
         <p class="facts">1 bedroom · 1 queen bed · free driveway parking</p>
   </div>
   <div class="features">
-    <div class="feature"><h3>Work from the house</h3><p>Dedicated desk with an ergonomic chair and fast Wi-Fi.</p></div>
-    <div class="feature"><h3>Live like at home</h3><p>Full kitchen with dishwasher, your own washer and dryer, quiet street.</p></div>
+    <div class="feature"><h3>Work from the house</h3><p>Dedicated desk with an ergonomic chair and fast <span class="nw">Wi-Fi</span>.</p></div>
+    <div class="feature"><h3>Live like at home</h3><p>Full kitchen with dishwasher, your own washer&nbsp;and&nbsp;dryer, quiet street.</p></div>
     <div class="feature"><h3>Arrive on your schedule</h3><p>Self check-in with a smart lock from 4 pm. Nothing shared with other guests.</p></div>
   </div>
-  <p class="band">Weekly &amp; monthly discounts · No county lodging tax on stays of 32+ nights</p>
+  <p class="band">Weekly &amp; monthly discounts · No county lodging tax on stays of 32+&nbsp;nights</p>
   <div class="strip">
     <img src="../images/kitchen-800.jpg" alt="">
     <img src="../images/bedroom-desk-800.jpg" alt="">
@@ -71,10 +76,10 @@
   <div class="bottom">
     <div class="qr"><img src="qr-q-board.svg" alt="QR code to perryvillestay.com"></div>
     <div class="cta">
-      <h2>Photos, dates &amp; booking</h2>
+      <h2>Current rates &amp; discounts</h2>
       <p class="url">perryvillestay.com</p>
-      <p>Scan the code or take a tab. Booking and messages through Airbnb – discounts apply automatically, receipts for your company in your Airbnb account.</p>
-      <p class="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
+      <p>Book and message us on Airbnb. Discounts apply automatically; itemized receipts for your expense report.</p>
+      <p class="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;plant&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
     </div>
   </div>
   <div class="tabs" id="tabs"></div>
@@ -97,7 +102,7 @@
     if (!m || !box) return;
     const host = box.querySelector('.photo') || box;   // inside the photo where there is one
     if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
-    const t = document.createElement('span'); t.className = 'qr-tag'; t.textContent = m[1]; host.appendChild(t);
+    const t = document.createElement('span'); t.className = 'qr-tag'; const LABEL = {"flyer": "FL", "bw": "BW", "board": "TB", "half": "HF", "rack": "RK", "rack-visit": "RV", "rack-shrine": "RS", "photo": "PC", "card": "BC", "tg": "FT", "mercy": "FM", "gilster": "FG", "air": "FA", "chamber": "FC", "shrine": "FS", "card-tg": "CT", "card-mercy": "CM", "card-gilster": "CG", "card-air": "CA", "card-chamber": "CC", "card-shrine": "CS"}; t.textContent = LABEL[m[1]] || m[1]; host.appendChild(t);
   });
 </script>
 </body>

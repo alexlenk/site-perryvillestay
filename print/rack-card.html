@@ -14,11 +14,11 @@
   .sheet.up2 { width: 8.5in; height: 11in; padding: 1in .25in; gap: 0; position: relative; }
   .sheet.up2 .card { outline: .5pt dashed #b9b4a8; }
   .card { width: 4in; height: 9in; display: flex; flex-direction: column; overflow: hidden; background: #fafaf7; }
-  .photo { position: relative; height: 3.3in; background: url("../images/house.jpg") center 58% / cover no-repeat; }
+  .photo { position: relative; height: 3.3in; background: url("../images/house.jpg") center 78% / cover no-repeat; }
   .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,30,.85), rgba(10,18,30,0) 60%); }
   .photo .title { position: absolute; left: .25in; right: .25in; bottom: .18in; z-index: 1; color: #fff; }
   .eyebrow { font-size: 6.6pt; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #e7e2d6; margin: 0 0 3pt; }
-  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 20.5pt; line-height: 1.05; margin: 0 0 4pt; font-weight: 600; }
+  h1 { font-family: "Gelasio", Georgia, serif; font-size: 17.5pt; line-height: 1.05; margin: 0 0 4pt; font-weight: 600; }
   .sub { font-size: 8.6pt; margin: 0; line-height: 1.3; }
   .body { flex: 1; padding: .18in .25in .2in; display: flex; flex-direction: column; gap: .13in; }
   .features { margin: 0; padding: 0; list-style: none; display: grid; gap: 4pt; }
@@ -26,21 +26,21 @@
   .features li::before { content: ""; position: absolute; left: 0; top: 3.5pt; width: 5pt; height: 5pt; border-radius: 50%; background: #1f3a5f; }
   .features b { color: #1f3a5f; }
   .strip { display: grid; grid-template-columns: 1fr 1fr; gap: .08in; }
-  .strip img { width: 100%; height: .95in; object-fit: cover; border-radius: 4pt; display: block; }
+  .strip img { width: 100%; height: .95in; object-fit: cover; filter: brightness(1.08) contrast(1.04); border-radius: 4pt; display: block; }
   .offers { display: grid; gap: .06in; }
   .offer { background: #1f3a5f; color: #fff; border-radius: 5pt; padding: 5pt 9pt; display: flex; align-items: baseline; gap: 7pt; }
-  .offer b { font-family: Georgia, serif; font-size: 13pt; white-space: nowrap; }
+  .offer b { font-family: "Gelasio", Georgia, serif; font-size: 13pt; white-space: nowrap; }
   .offer span { font-size: 8pt; }
   .near { font-size: 8.2pt; line-height: 1.35; color: #3d434a; margin: 2pt 0 0; }
   .bottom { margin-top: auto; display: flex; gap: .14in; align-items: center; border-top: 1px solid #ddd9d0; padding-top: .14in; }
   .qr { width: 1.25in; height: 1.25in; flex: none; background: #fff; padding: 3pt; border-radius: 4pt; border: 1px solid #ddd9d0; }
   .qr img { width: 100%; height: 100%; display: block; }
-  .cta h2 { font-family: Georgia, serif; font-size: 11pt; margin: 0 0 2pt; color: #1f3a5f; }
+  .cta h2 { font-family: "Gelasio", Georgia, serif; font-size: 11pt; margin: 0 0 2pt; color: #1f3a5f; }
   .cta .url { font-size: 12.5pt; font-weight: 700; margin: 0 0 3pt; }
   .cta p { font-size: 7.4pt; margin: 0; color: #3d434a; line-height: 1.3; }
-  .cta .drive { font-size: 6.5pt; color: #6b7178; margin: 3pt 0 0; line-height: 1.3; text-wrap: balance; }
+  .cta .drive { font-size: 7pt; color: #6b7178; margin: 3pt 0 0; line-height: 1.3; text-wrap: balance; }
   /* Small code in the corner showing which tracking QR code this print carries (perryvillestay.com/q/<code>). */
-  .qr-tag { position: absolute; right: .08in; bottom: .08in; font: 5.5pt/1 "Helvetica Neue", Arial, sans-serif; color: #a7a39a; letter-spacing: .04em; }
+  .qr-tag { position: absolute; right: .08in; bottom: .08in; font: 4.0pt/1 "Helvetica Neue", Arial, sans-serif; color: #a7a39a; letter-spacing: .04em; }
   .photo .qr-tag { top: auto; left: auto; right: .1in; bottom: .1in; writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(255,255,255,.8); text-shadow: 0 0 1.5px rgba(0,0,0,.6); z-index: 2; }
   .band { margin: 0; background: #1f3a5f; color: #fff; border-radius: 5pt; padding: 6pt 9pt; font-size: 8.6pt; font-weight: 700; text-align: center; line-height: 1.3; }
   .titlebar { flex: none; background: #1f3a5f; color: #fff; padding: .13in .25in .15in; }
@@ -48,6 +48,11 @@
   .titlebar .title { position: static; }
   .photo::after { display: none; }
   .facts { font-size: 7.6pt; margin: 2pt 0 0; color: #e7e2d6; font-weight: 600; }
+  /* Gelasio (SIL Open Font License, fonts/Gelasio-OFL-LICENSE.txt), metrically close to Georgia, embedded so every PDF uses the same serif. */
+  @font-face { font-family: "Gelasio"; src: url("fonts/gelasio-latin-600-normal.woff2") format("woff2"); font-weight: 400 600; }
+  @font-face { font-family: "Gelasio"; src: url("fonts/gelasio-latin-700-normal.woff2") format("woff2"); font-weight: 700 900; }
+  p, li, h1, h2, h3 { text-wrap: pretty; }
+  .nw { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -58,7 +63,7 @@
     </div>
     <div class="titlebar">
       <div class="title">
-        <p class="eyebrow">★ Guest Favorite on Airbnb · German-Inspired Home</p>
+        <p class="eyebrow">★ Guest Favorite on Airbnb</p>
         <h1>In town for work?<br>Your own house, not a room.</h1>
         <p class="sub">Whole furnished house in Perryville · weekly &amp; monthly stays</p>
         <p class="facts">1 bedroom · 1 queen bed · free driveway parking</p>
@@ -67,21 +72,21 @@
     <div class="body">
       <ul class="features">
         <li><b>Whole house to yourself</b> – nothing shared, quiet street</li>
-        <li><b>Desk &amp; fast Wi-Fi</b>, full kitchen, washer and dryer</li>
+        <li><b>Desk &amp; fast <span class="nw">Wi-Fi</span></b>, full kitchen, washer&nbsp;and&nbsp;dryer</li>
         <li><b>Self check-in</b> from 4 pm</li>
       </ul>
       <div class="strip">
         <img src="../images/kitchen-800.jpg" alt="">
         <img src="../images/bedroom-desk-800.jpg" alt="">
       </div>
-      <p class="band">Weekly &amp; monthly discounts · No county lodging tax on stays of 32+ nights</p>
+      <p class="band">Weekly &amp; monthly discounts · No county lodging tax on stays of 32+&nbsp;nights</p>
       <div class="bottom">
         <div class="qr"><img src="qr-q-rack.svg" alt="QR code to perryvillestay.com"></div>
         <div class="cta">
-          <h2>Photos &amp; booking</h2>
+          <h2>Current rates &amp; discounts</h2>
           <p class="url">perryvillestay.com</p>
           <p>Book and message us on Airbnb.</p>
-          <p class="drive" data-drive>Approx. drive times: TG&nbsp;Missouri&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
+          <p class="drive" data-drive>Approx. drive times: TG&nbsp;Missouri&nbsp;plant&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
 </div>
       </div>
     </div>
@@ -101,7 +106,7 @@
     if (!m || !box) return;
     const host = box.querySelector('.photo') || box;   // inside the photo where there is one
     if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
-    const t = document.createElement('span'); t.className = 'qr-tag'; t.textContent = m[1]; host.appendChild(t);
+    const t = document.createElement('span'); t.className = 'qr-tag'; const LABEL = {"flyer": "FL", "bw": "BW", "board": "TB", "half": "HF", "rack": "RK", "rack-visit": "RV", "rack-shrine": "RS", "photo": "PC", "card": "BC", "tg": "FT", "mercy": "FM", "gilster": "FG", "air": "FA", "chamber": "FC", "shrine": "FS", "card-tg": "CT", "card-mercy": "CM", "card-gilster": "CG", "card-air": "CA", "card-chamber": "CC", "card-shrine": "CS"}; t.textContent = LABEL[m[1]] || m[1]; host.appendChild(t);
   });
 </script>
 </body>

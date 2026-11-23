@@ -13,31 +13,31 @@
   .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,18,30,.82), rgba(10,18,30,0) 55%); }
   .photo .title { position: absolute; left: .6in; right: .6in; bottom: .35in; z-index: 1; color: #fff; }
   .eyebrow { font-size: 11pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #e7e2d6; margin: 0 0 6pt; }
-  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 43pt; line-height: 1.02; margin: 0 0 6pt; font-weight: 600; }
+  h1 { font-family: "Gelasio", Georgia, serif; font-size: 36.5pt; line-height: 1.02; margin: 0 0 6pt; font-weight: 600; }
   .sub { font-size: 18pt; margin: 0; color: #fff; }
   .body { flex: 1; padding: .22in .6in .3in; display: flex; flex-direction: column; gap: .15in; }
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
   .feature { background: #fff; border: 1px solid #ddd9d0; border-radius: 8pt; padding: 7pt 12pt; }
-  .feature h3 { font-family: Georgia, serif; font-size: 13pt; margin: 0 0 4pt; color: #1f3a5f; }
+  .feature h3 { font-family: "Gelasio", Georgia, serif; font-size: 11.3pt; margin: 0 0 4pt; color: #1f3a5f; }
   .feature p { font-size: 10.5pt; line-height: 1.35; margin: 0; color: #3d434a; }
   .offers { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
   .offer { background: #1f3a5f; color: #fff; border-radius: 8pt; padding: 10pt 12pt; }
-  .offer b { display: block; font-family: Georgia, serif; font-size: 24pt; line-height: 1; margin-bottom: 4pt; }
+  .offer b { display: block; font-family: "Gelasio", Georgia, serif; font-size: 24pt; line-height: 1; margin-bottom: 4pt; }
   .offer span { font-size: 10.5pt; line-height: 1.3; }
   .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
   .strip figure { margin: 0; }
-  .strip img { width: 100%; height: .78in; object-fit: cover; border-radius: 6pt; display: block; }
+  .strip img { width: 100%; height: .78in; object-fit: cover; filter: brightness(1.08) contrast(1.04); border-radius: 6pt; display: block; }
   .strip figcaption { font-size: 8.5pt; color: #6b7178; margin-top: 3pt; }
   .bottom { display: flex; gap: .3in; align-items: center; margin-top: auto; border-top: 1px solid #ddd9d0; padding-top: .22in; }
   .qr { width: 1.65in; height: 1.65in; flex: none; background: #fff; padding: 4pt; border-radius: 6pt; border: 1px solid #ddd9d0; }
   .qr img { width: 100%; height: 100%; display: block; }
-  .cta h2 { font-family: Georgia, serif; font-size: 20pt; margin: 0 0 4pt; color: #1f3a5f; }
+  .cta h2 { font-family: "Gelasio", Georgia, serif; font-size: 20pt; margin: 0 0 4pt; color: #1f3a5f; }
   .cta .url { font-size: 22pt; font-weight: 700; letter-spacing: .01em; margin: 0 0 6pt; }
   .cta p { font-size: 11pt; margin: 0 0 3pt; color: #3d434a; line-height: 1.35; }
   .small { font-size: 9pt !important; color: #6b7178 !important; }
-  .cta .drive { font-size: 8.5pt; color: #6b7178; margin: 4pt 0 0; text-wrap: balance; }
+  .cta .drive { font-size: 9.5pt; color: #6b7178; margin: 4pt 0 0; text-wrap: balance; }
   /* Small code in the corner showing which tracking QR code this print carries (perryvillestay.com/q/<code>). */
-  .qr-tag { position: absolute; right: .34in; bottom: .32in; writing-mode: vertical-rl; transform: rotate(180deg); font: 6.5pt/1 "Helvetica Neue", Arial, sans-serif; color: #a7a39a; letter-spacing: .04em; }
+  .qr-tag { position: absolute; right: .34in; bottom: .32in; writing-mode: vertical-rl; transform: rotate(180deg); font: 5.0pt/1 "Helvetica Neue", Arial, sans-serif; color: #a7a39a; letter-spacing: .04em; }
   .photo .qr-tag { top: auto; left: auto; right: .32in; bottom: .14in; writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(255,255,255,.8); text-shadow: 0 0 1.5px rgba(0,0,0,.6); z-index: 2; }
   .band { margin: 0; background: #1f3a5f; color: #fff; border-radius: 8pt; padding: 9pt 14pt; font-size: 13pt; font-weight: 700; text-align: center; }
   .titlebar { flex: none; background: #1f3a5f; color: #fff; padding: .22in .6in .24in; }
@@ -45,6 +45,11 @@
   .titlebar .title { position: static; }
   .photo::after { display: none; }
   .facts { font-size: 13pt; margin: 4pt 0 0; color: #e7e2d6; font-weight: 600; }
+  /* Gelasio (SIL Open Font License, fonts/Gelasio-OFL-LICENSE.txt), metrically close to Georgia, embedded so every PDF uses the same serif. */
+  @font-face { font-family: "Gelasio"; src: url("fonts/gelasio-latin-600-normal.woff2") format("woff2"); font-weight: 400 600; }
+  @font-face { font-family: "Gelasio"; src: url("fonts/gelasio-latin-700-normal.woff2") format("woff2"); font-weight: 700 900; }
+  p, li, h1, h2, h3 { text-wrap: pretty; }
+  .nw { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -53,7 +58,7 @@
   </div>
   <div class="titlebar">
     <div class="title">
-      <p class="eyebrow">★ Guest Favorite on Airbnb · German-Inspired Home</p>
+      <p class="eyebrow">★ Guest Favorite on Airbnb</p>
       <h1>In town for work?<br>Your own house, not a room.</h1>
       <p class="sub">Whole furnished house in Perryville · weekly &amp; monthly stays</p>
         <p class="facts">1 bedroom · 1 queen bed · free driveway parking</p>
@@ -61,11 +66,11 @@
   </div>
   <div class="body">
     <div class="features">
-      <div class="feature"><h3>Work from the house</h3><p>Dedicated desk with an ergonomic chair and fast Wi-Fi.</p></div>
-      <div class="feature"><h3>Live like at home</h3><p>Full kitchen with dishwasher, your own washer and dryer, quiet street.</p></div>
+      <div class="feature"><h3>Work from the house</h3><p>Dedicated desk with an ergonomic chair and fast <span class="nw">Wi-Fi</span>.</p></div>
+      <div class="feature"><h3>Live like at home</h3><p>Full kitchen with dishwasher, your own washer&nbsp;and&nbsp;dryer, quiet street.</p></div>
       <div class="feature"><h3>Arrive on your schedule</h3><p>Self check-in with a smart lock from 4 pm. Nothing shared with other guests.</p></div>
     </div>
-    <p class="band">Weekly &amp; monthly discounts · No county lodging tax on stays of 32+ nights</p>
+    <p class="band">Weekly &amp; monthly discounts · No county lodging tax on stays of 32+&nbsp;nights</p>
     <div class="strip">
       <figure><img src="../images/kitchen-800.jpg" alt=""><figcaption>Full kitchen</figcaption></figure>
       <figure><img src="../images/bedroom-desk-800.jpg" alt=""><figcaption>Bedroom with desk</figcaption></figure>
@@ -74,11 +79,11 @@
     <div class="bottom">
       <div class="qr"><img src="qr-q-flyer.svg" alt="QR code to perryvillestay.com"></div>
       <div class="cta">
-        <h2>Photos, dates &amp; booking</h2>
+        <h2>Current rates &amp; discounts</h2>
         <p class="url">perryvillestay.com</p>
-        <p>Scan the code or visit the website. Booking and messages through Airbnb – discounts apply automatically, receipts for your company in your Airbnb account.</p>
-        <p class="small">Clean, minimalist European style · Restored in 2022</p>
-        <p class="drive" id="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
+        <p>Book and message us on Airbnb. Discounts apply automatically; itemized receipts for your expense report.</p>
+        <p class="small">Modern, clean European-style interior · Renovated in 2022</p>
+        <p class="drive" id="drive">Approx. drive times: TG&nbsp;Missouri&nbsp;plant&nbsp;5&nbsp;min · National&nbsp;Shrine&nbsp;4&nbsp;min · downtown&nbsp;square&nbsp;2&nbsp;min · Aldi&nbsp;4&nbsp;min</p>
 </div>
     </div>
   </div>
@@ -92,10 +97,10 @@
   // Location flyers name their own destination first in the drive-times footnote (times from OpenStreetMap routing, rounded up).
   const drive = {
     mercy:   ['Mercy Hospital 3 min', 'National Shrine 4 min', 'downtown square 2 min', 'Aldi 4 min'],
-    gilster: ['Gilster-Mary Lee 3 min', 'TG Missouri 5 min', 'downtown square 2 min', 'Aldi 4 min'],
+    gilster: ['Gilster-Mary Lee 3 min', 'TG Missouri plant 5 min', 'downtown square 2 min', 'Aldi 4 min'],
     air:     ['Perryville Regional Airport about 20 min', 'downtown square 2 min', 'Aldi 4 min'],
-    chamber: ['Chamber of Commerce 3 min', 'TG Missouri 5 min', 'National Shrine 4 min', 'Aldi 4 min'],
-    shrine:  ['National Shrine 4 min', 'TG Missouri 5 min', 'downtown square 2 min', 'Aldi 4 min'],
+    chamber: ['Chamber of Commerce 3 min', 'TG Missouri plant 5 min', 'National Shrine 4 min', 'Aldi 4 min'],
+    shrine:  ['National Shrine 4 min', 'TG Missouri plant 5 min', 'downtown square 2 min', 'Aldi 4 min'],
   }[new URLSearchParams(location.search).get('qr')];
   if (drive) document.getElementById('drive').textContent = 'Approx. drive times: ' + drive.map(x => x.replace(/ /g, '\u00a0')).join(' \u00b7 ');
 </script>
@@ -107,7 +112,7 @@
     if (!m || !box) return;
     const host = box.querySelector('.photo') || box;   // inside the photo where there is one
     if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
-    const t = document.createElement('span'); t.className = 'qr-tag'; t.textContent = m[1]; host.appendChild(t);
+    const t = document.createElement('span'); t.className = 'qr-tag'; const LABEL = {"flyer": "FL", "bw": "BW", "board": "TB", "half": "HF", "rack": "RK", "rack-visit": "RV", "rack-shrine": "RS", "photo": "PC", "card": "BC", "tg": "FT", "mercy": "FM", "gilster": "FG", "air": "FA", "chamber": "FC", "shrine": "FS", "card-tg": "CT", "card-mercy": "CM", "card-gilster": "CG", "card-air": "CA", "card-chamber": "CC", "card-shrine": "CS"}; t.textContent = LABEL[m[1]] || m[1]; host.appendChild(t);
   });
 </script>
 </body>

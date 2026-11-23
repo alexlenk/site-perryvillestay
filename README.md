@@ -16,7 +16,8 @@ Each printed format has its own QR code so Web Analytics can show which one gets
 - Codes: `flyer` (color Letter flyer), `bw` (black-and-white flyer), `board` and `tab` (B&W bulletin-board flyer with tear-off tabs, `print/flyer-bw-tabs.html`; the tab codes use error correction L so they fit in QR version 2), `half` (half-page flyer), `rack` (rack card), `photo` (4x6 photo card), `card` (all business cards); locations `tg`, `mercy`, `gilster`, `air` (airport and West Star), `chamber` (Chamber and Welcome Center), `shrine`. Location business cards use `card-<location>`. Visitor rack card (`print/rack-card-visit.html`, for tourist racks): `rack-visit`, Shrine version `rack-shrine`.
 - Location versions: `print/flyer.html?qr=<location>`, `print/cards.html?qr=<location>`, `print/cards-bw.html?qr=<location>`, `print/cards-photo-4x6.html?qr=<location>`, `print/rack-card.html?qr=shrine`. Rendered files are in `print/locations/`. QR images are `print/qr-q-<code>.svg`. Location flyers name their own destination first in the drive-times footnote.
 - Results: Cloudflare dashboard > Web Analytics > perryvillestay.com, filter or group by Path.
-- Every printed page and card shows its code in small gray text in the bottom-right corner (read automatically from the QR image it uses), so printed piles can be told apart.
+- Every printed page and card shows a tiny two-letter label (inside the photo where there is one) so printed piles can be told apart: FL flyer, BW black-and-white flyer, TB tear-off flyer, HF half-page, RK rack card, RV visitor rack card, RS Shrine rack card, PC 4x6 photo card, BC business card; location flyers FT/FM/FG/FA/FC/FS and location cards CT/CM/CG/CA/CC/CS (TG, Mercy, Gilster, airport, Chamber, Shrine). The mapping is in the label script of each print file.
+- Print headlines use the embedded font Gelasio (`print/fonts/`, SIL Open Font License) so PDFs look the same on every machine.
 
 ## Discounts in print
 
