@@ -40,6 +40,7 @@
   .cta .drive { font-size: 6.5pt; color: #6b7178; margin: 3pt 0 0; line-height: 1.3; text-wrap: balance; }
   /* Small code in the corner showing which tracking QR code this print carries (perryvillestay.com/q/<code>). */
   .qr-tag { position: absolute; right: .08in; bottom: .08in; font: 5.5pt/1 "Helvetica Neue", Arial, sans-serif; color: #a7a39a; letter-spacing: .04em; }
+  .photo .qr-tag { top: auto; left: auto; right: .1in; bottom: .1in; writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(255,255,255,.8); text-shadow: 0 0 1.5px rgba(0,0,0,.6); z-index: 2; }
 </style>
 </head>
 <body>
@@ -102,8 +103,9 @@
     const m = (img.getAttribute('src') || '').match(/qr-q-([a-z-]+)\.svg/);
     const box = img.closest('.page, .card');
     if (!m || !box) return;
-    if (getComputedStyle(box).position === 'static') box.style.position = 'relative';
-    const t = document.createElement('span'); t.className = 'qr-tag'; t.textContent = m[1]; box.appendChild(t);
+    const host = box.querySelector('.photo') || box;   // inside the photo where there is one
+    if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
+    const t = document.createElement('span'); t.className = 'qr-tag'; t.textContent = m[1]; host.appendChild(t);
   });
 </script>
 </body>
