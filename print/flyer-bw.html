@@ -12,10 +12,10 @@
   body { font-family: "Helvetica Neue", Arial, sans-serif; color: #000; }
   .page { display: flex; flex-direction: column; overflow: hidden; padding: .45in .6in .4in; gap: .2in; }
   .letter .page { width: 8.5in; height: 11in; }
-  .photo { flex: none; height: 2.35in; background: url("../images/house.jpg") center 40% / cover no-repeat; filter: grayscale(1) contrast(1.05); border: 1pt solid #000; }
+  .photo { flex: none; height: 2.15in; background: url("../images/house.jpg") center 40% / cover no-repeat; filter: grayscale(1) contrast(1.05); border: 1pt solid #000; }
   .eyebrow { font-size: 10pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin: 0 0 4pt; color: #333; }
   h1 { font-family: Georgia, "Times New Roman", serif; font-size: 54pt; line-height: 1.05; margin: 0 0 5pt; font-weight: 700; }
-  .sub { font-size: 14pt; margin: 0; }
+  .sub { font-size: 18pt; margin: 0; }
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: .15in; }
   .feature { border: 1pt solid #000; border-radius: 6pt; padding: 9pt 11pt; }
   .feature h3 { font-family: Georgia, serif; font-size: 12.5pt; margin: 0 0 3pt; }
@@ -39,6 +39,7 @@
   /* Small code in the corner showing which tracking QR code this print carries (perryvillestay.com/q/<code>). */
   .qr-tag { position: absolute; right: .34in; bottom: .32in; writing-mode: vertical-rl; transform: rotate(180deg); font: 6.5pt/1 "Helvetica Neue", Arial, sans-serif; color: #888; letter-spacing: .04em; }
   .photo .qr-tag { top: auto; left: auto; right: .07in; bottom: .07in; writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(255,255,255,.8); text-shadow: 0 0 1.5px rgba(0,0,0,.6); z-index: 2; }
+  .band { margin: 0; border: 2pt solid #000; border-radius: 6pt; padding: 7pt 12pt; font-size: 12.5pt; font-weight: 700; text-align: center; }
 </style>
 </head>
 <body>
@@ -46,19 +47,15 @@
   <div class="photo"></div>
   <div>
     <p class="eyebrow">German-Inspired Home · Guest Favorite on Airbnb</p>
-    <h1>In town for work?</h1>
-    <p class="sub">Stay in a furnished house – by the week or month · Perryville</p>
+    <h1>In town for work?<br>Skip the motel.</h1>
+    <p class="sub">Whole furnished house in Perryville · weekly &amp; monthly stays</p>
   </div>
   <div class="features">
     <div class="feature"><h3>Work from the house</h3><p>Dedicated desk with an ergonomic chair and fast Wi-Fi.</p></div>
     <div class="feature"><h3>Live like at home</h3><p>Full kitchen with dishwasher, your own washer and dryer, quiet street.</p></div>
     <div class="feature"><h3>Arrive on your schedule</h3><p>Self check-in with a smart lock from 4 pm. Nothing shared with other guests.</p></div>
   </div>
-  <div class="offers">
-    <div class="offer"><b>Weekly discount</b><span>stays of 7 nights or more</span></div>
-    <div class="offer"><b>Monthly discount</b><span>stays of 28 nights or more</span></div>
-    <div class="offer"><b>No county tax</b><span>Perry County lodging tax does not apply from 32 nights</span></div>
-  </div>
+  <p class="band">Weekly &amp; monthly discounts · No county lodging tax on stays of 32+ nights</p>
   <div class="strip">
     <figure><img src="../images/kitchen-800.jpg" alt=""><figcaption>Full kitchen</figcaption></figure>
     <figure><img src="../images/bedroom-desk-800.jpg" alt=""><figcaption>Bedroom with desk</figcaption></figure>
