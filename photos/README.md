@@ -4,7 +4,7 @@ As of 2026-11-24. Background and decisions: family knowledge base, `Properties/P
 
 ## Folders
 
-- `originals/` – the unedited source photos the edits start from (owners' own photos, re-saved without metadata). `house-airbnb-cover.jpg` is the current Airbnb cover photo as downloaded from the public listing (2560 px). The owners' private bedroom photos (IMG_9584/9585) are deliberately not stored.
+- `originals/` – the unedited source photos the edits start from (owners' own photos, re-saved without metadata). `house-airbnb-cover.jpg` is the current Airbnb cover photo as downloaded from the public listing (2560 px). The owners' private bedroom photos (IMG_9487/9488) are deliberately not stored.
 - `airbnb-upload/` – the 9 edited photos at full size, numbered in the suggested Airbnb order (01 = cover). Same edits as `../images/` (which holds the 1440/800 px website versions).
 - `edit/` – the Python scripts used on 2026-11-24. They were run in a Claude cloud session and contain that session's absolute paths (`/tmp/claude-0/...`, upload ids); adjust the paths before reuse. Mapping of upload ids to files: `8de75834` kitchen, `11b621e1` bedroom-desk, `2512033c` living-and-kitchen, `f6ddc7c8` living-room, `8d82d17c` bedroom, `6d28b7f6` dining, `5e4cd524` bathroom, `7cf0a005` shower, `9ebf4ab7` spring house photo, `/tmp/claude-0/airbnb/big_2560.jpg` Airbnb cover.
 
