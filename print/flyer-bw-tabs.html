@@ -12,7 +12,7 @@
   html, body { margin: 0; padding: 0; background: #fff; }
   body { font-family: "Helvetica Neue", Arial, sans-serif; color: #000; }
   .page { position: relative; width: 8.5in; height: 11in; display: flex; flex-direction: column; overflow: hidden; padding: .4in .6in 0; gap: .16in; }
-  .photo { flex: none; height: 1.41in; background: url("../images/bw/house-bw.jpg") center 28% / cover no-repeat; border: 1pt solid #000; }
+  .photo { flex: none; height: 1.85in; background: url("../images/bw/house-flyer-bw.jpg") center 36% / cover no-repeat; border: 1pt solid #000; }
   .eyebrow { font-size: 10pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin: 0 0 3pt; color: #333; }
   h1 { font-family: "Gelasio", Georgia, serif; font-size: 35pt; line-height: 1.05; margin: 0 0 4pt; font-weight: 700; }
   .sub { font-size: 16pt; margin: 0; }
@@ -35,7 +35,7 @@
   .cta .drive { font-size: 9pt; color: #111; margin: 3pt 0 0; text-wrap: balance; }
   /* Tear-off tabs */
   .tabs { margin: auto -.3in .3in; height: 2.15in; border-top: 1pt dashed #000; display: grid; grid-template-columns: repeat(9, 1fr); }
-  .tab { border-left: .75pt dashed #000; padding: .08in .06in .1in; display: flex; flex-direction: column; align-items: center; gap: .06in; }
+  .tab { border-left: .75pt dashed #000; padding: .12in .06in .1in; display: flex; flex-direction: column; align-items: center; gap: .06in; }
   .tab:first-child { border-left: 0; }
   .tab-qr { width: .74in; height: .74in; flex: none; }
   .tab-text { flex: 1; writing-mode: vertical-rl; transform: rotate(180deg); display: flex; flex-direction: column; justify-content: center; text-align: center; }
@@ -63,9 +63,9 @@
         <p class="facts">1 bedroom · 1 queen bed · up to 2 guests · free driveway parking</p>
   </div>
   <div class="features">
-    <div class="feature"><h3>Set up for work</h3><p>Dedicated desk with an ergonomic chair and fast <span class="nw">Wi-Fi</span>.</p></div>
-    <div class="feature"><h3>All the comforts of home</h3><p>Full kitchen with dishwasher, your own washer&nbsp;and&nbsp;dryer, quiet street.</p></div>
-    <div class="feature"><h3>Arrive on your schedule</h3><p>Self check-in with a smart lock any time after 4 pm, late arrivals welcome. Nothing shared with other guests.</p></div>
+    <div class="feature"><h3>Set up for work</h3><p>Dedicated desk with an ergonomic chair and fast <span class="nw">Wi-Fi</span> on a quiet street.</p></div>
+    <div class="feature"><h3>All the comforts of home</h3><p>Full kitchen with dishwasher, own washer &amp; dryer. Nothing shared with other guests.</p></div>
+    <div class="feature"><h3>Arrive on your schedule</h3><p>Self check-in with a smart lock any time after 4&nbsp;pm, late arrivals welcome.</p></div>
   </div>
   <p class="band">Cheaper than a hotel room · Weekly &amp; monthly discounts</p>
   <div class="strip">
@@ -86,8 +86,8 @@
 </div>
 <template id="tab">
   <div class="tab">
-    <div class="tab-qr"><img src="qr-q-tab.svg" alt=""></div>
     <div class="tab-text"><b>Weekly &amp; monthly stays</b><span>perryvillestay.com</span></div>
+    <div class="tab-qr"><img src="qr-q-tab.svg" alt=""></div>
   </div>
 </template>
 <script>
